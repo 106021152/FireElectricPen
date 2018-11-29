@@ -3,6 +3,9 @@ package go;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class Easy extends JFrame {
     private JMenuBar jmb = new JMenuBar();
@@ -12,7 +15,8 @@ public class Easy extends JFrame {
     private JMenuItem jmiexit = new JMenuItem("Exit");
     private JMenuItem jmiabout = new JMenuItem("關於作者");
     private Final frame;
-    private JLabel jlb = new JLabel();
+    private JLabel stick = new JLabel();
+    private ImageIcon img1 = new ImageIcon("stick.PNG");
     private Container cp;
     public Easy(Final frame){
         this.frame= frame;
@@ -35,6 +39,22 @@ public class Easy extends JFrame {
         this.setBounds(0,0,1600,1000);
         this.setResizable(false);
         this.setTitle("電流急急棒");
+        stick.setIcon(img1);
+        this.add(stick);
+
+        stick.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                stick.setLocation(e.getXOnScreen() -50,e.getYOnScreen()-500 );
+            }
+        });
+
+        stick.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                stick.setLocation(e.getXOnScreen() -50 ,e.getYOnScreen() - 500);
+            }
+        });
         jmiabout.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
