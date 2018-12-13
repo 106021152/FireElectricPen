@@ -27,6 +27,8 @@ public class Finalgo extends JFrame{
     private Container cp;
     private Timer bgTimer;
     private int bg = 1;
+
+
     public Finalgo(Final frame){
         this.frame = frame;
         go();
@@ -120,7 +122,7 @@ public class Finalgo extends JFrame{
         jbtneasy.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Easy ea = new Easy();
+                Easy ea = new Easy(Finalgo.this);
                 ea.setVisible(true);
                 Finalgo.this.setVisible(false);
             }
@@ -128,7 +130,7 @@ public class Finalgo extends JFrame{
         jbtnnormal.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Normal no = new Normal();
+                Normal no = new Normal(Finalgo.this);
                 no.setVisible(true);
                 Finalgo.this.setVisible(false);
             }
@@ -136,7 +138,7 @@ public class Finalgo extends JFrame{
         jbtnhard.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Hard ha = new Hard();
+                Hard ha = new Hard(Finalgo.this);
                 ha.setVisible(true);
                 Finalgo.this.setVisible(false);
             }
