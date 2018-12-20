@@ -43,6 +43,7 @@ public class Normal extends JFrame {
     private Sprite wall24 = new Sprite();
     private Sprite wall25 = new Sprite();
     private Sprite wall26 = new Sprite();
+    private Sprite wall27 = new Sprite();
     private Sprite finish = new Sprite();
     private ImageIcon img1 = new ImageIcon("stick.PNG");
     private ImageIcon img2 = new ImageIcon("boom.png");
@@ -108,7 +109,7 @@ public class Normal extends JFrame {
         wall7.setBackground(Color.BLACK);
         wall7.setOpaque(true);
 
-        wall8.setPosition(405, 285, 15, 340);
+        wall8.setPosition(405, 285, 15, 200);
         wall8.setBackground(Color.BLACK);
         wall8.setOpaque(true);
 
@@ -116,7 +117,11 @@ public class Normal extends JFrame {
         wall9.setBackground(Color.BLACK);
         wall9.setOpaque(true);
 
-        wall10.setPosition(405, 620, 180, 15);
+        wall27.setPosition(405, 480, 180, 15);
+        wall27.setBackground(Color.BLACK);
+        wall27.setOpaque(true);
+
+        wall10.setPosition(405, 540, 180, 100);
         wall10.setBackground(Color.BLACK);
         wall10.setOpaque(true);
 
@@ -124,11 +129,11 @@ public class Normal extends JFrame {
         wall11.setBackground(Color.BLACK);
         wall11.setOpaque(true);
 
-        wall12.setPosition(575, 335, 15, 300);
+        wall12.setPosition(575, 335, 15, 160);
         wall12.setBackground(Color.BLACK);
         wall12.setOpaque(true);
 
-        wall13.setPosition(675, 405, 200, 15);
+        wall13.setPosition(675, 405, 315, 15);
         wall13.setBackground(Color.BLACK);
         wall13.setOpaque(true);
 
@@ -139,12 +144,12 @@ public class Normal extends JFrame {
         wall15.setPosition(770, 150, 15, 200);
         wall15.setBackground(Color.BLACK);
         wall15.setOpaque(true);
+//
+//        wall16.setPosition(875, 220, 15, 200);
+//        wall16.setBackground(Color.BLACK);
+//        wall16.setOpaque(true);
 
-        wall16.setPosition(875, 220, 15, 200);
-        wall16.setBackground(Color.BLACK);
-        wall16.setOpaque(true);
-
-        wall17.setPosition(875, 220, 100, 15);
+        wall17.setPosition(875, 205, 100, 170);
         wall17.setBackground(Color.BLACK);
         wall17.setOpaque(true);
 
@@ -152,7 +157,7 @@ public class Normal extends JFrame {
         wall18.setBackground(Color.BLACK);
         wall18.setOpaque(true);
 
-        wall19.setPosition(975, 220, 15, 250);
+        wall19.setPosition(975, 410, 15, 60);
         wall19.setBackground(Color.BLACK);
         wall19.setOpaque(true);
 
@@ -214,6 +219,7 @@ public class Normal extends JFrame {
         this.add(wall24);
         this.add(wall25);
         this.add(wall26);
+        this.add(wall27);
         this.add(finish);
         bgTimer = new Timer(200, new ActionListener() {
             @Override
@@ -264,7 +270,8 @@ public class Normal extends JFrame {
 
                 if (!e.isControlDown()) {           //外掛
 
-                    if (stick.overlapCheck(wall1) || stick.overlapCheck(wall2) || stick.overlapCheck(wall3) || stick.overlapCheck(wall4) || stick.overlapCheck(wall5) || stick.overlapCheck(wall6) || stick.overlapCheck(wall7) || stick.overlapCheck(wall8) || stick.overlapCheck(wall9) || stick.overlapCheck(wall10)) {
+                    if (stick.overlapCheck(wall1) || stick.overlapCheck(wall2) || stick.overlapCheck(wall3) || stick.overlapCheck(wall4) || stick.overlapCheck(wall5) || stick.overlapCheck(wall6) || stick.overlapCheck(wall7) || stick.overlapCheck(wall8) || stick.overlapCheck(wall9) || stick.overlapCheck(wall10)||stick.overlapCheck(wall11)||stick.overlapCheck(wall12)||stick.overlapCheck(wall13)||stick.overlapCheck(wall14)||stick.overlapCheck(wall15)
+                            ||stick.overlapCheck(wall16)||stick.overlapCheck(wall17)||stick.overlapCheck(wall18)||stick.overlapCheck(wall19)||stick.overlapCheck(wall20)||stick.overlapCheck(wall21)||stick.overlapCheck(wall22)||stick.overlapCheck(wall23)||stick.overlapCheck(wall24)||stick.overlapCheck(wall25)||stick.overlapCheck(wall26)||stick.overlapCheck(wall27)) {
                         stick.setIcon(img2);
                         JOptionPane.showMessageDialog(Normal.this, "豬喔碰到了啦");
                         stick.setIcon(img1);
