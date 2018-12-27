@@ -221,21 +221,21 @@ public class Normal extends JFrame {
         this.add(wall26);
         this.add(wall27);
         this.add(finish);
-        bgTimer = new Timer(200, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (bg == 1){
-//                    jlb.setIcon(imageIcon[0]);
-                    cp.setBackground(Color.gray);
-                    bg = 2;
-                }else if (bg == 2){
-//                    jlb.setIcon(imageIcon[1]);
-                    cp.setBackground(Color.white);
-                    bg = 1;
-                }
-            }
-        });
-        bgTimer.start(); //在timer以下
+//        bgTimer = new Timer(200, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (bg == 1){
+////                    jlb.setIcon(imageIcon[0]);
+//                    cp.setBackground(Color.gray);
+//                    bg = 2;
+//                }else if (bg == 2){
+////                    jlb.setIcon(imageIcon[1]);
+//                    cp.setBackground(Color.white);
+//                    bg = 1;
+//                }
+//            }
+//        });
+//        bgTimer.start(); //在timer以下
 
         stick.addMouseListener(new MouseAdapter() {
             @Override
@@ -278,6 +278,7 @@ public class Normal extends JFrame {
                         stick.setPosition(0, 500, 80, 48);
                     } else if (stick.overlapCheck(finish)) {
                         JOptionPane.showMessageDialog(Normal.this, "過關唷");
+                        frameeasy.setVisible(true);
                         Normal.this.setVisible(false);
 
                     }
